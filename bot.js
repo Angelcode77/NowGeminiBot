@@ -4,6 +4,10 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN);
+
+// 👇 Ajoute cette ligne juste ici :
+console.log("✅ Bot Token : ", process.env.TELEGRAM_BOT_TOKEN);
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
