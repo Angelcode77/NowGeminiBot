@@ -1,0 +1,20 @@
+{
+  "name": "nowgeminibot",
+  "version": "1.0.0",
+  "description": "Bot Telegram avec Gemini et serveur Express",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["telegram", "bot", "gemini", "express", "ai"],
+  "author": "Angel",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.6.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.19.2",
+    "grammy": "^1.19.1"
+  }
+}
+
