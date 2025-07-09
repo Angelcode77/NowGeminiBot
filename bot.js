@@ -5,11 +5,13 @@ dotenv.config();
 
 const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN);
 
-// 👇 Ajoute cette ligne juste ici :
+// ✅ Vérifie que le token est bien chargé
 console.log("✅ Bot Token : ", process.env.TELEGRAM_BOT_TOKEN);
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+// ✅ Correction ici : nom complet du modèle requis
+const model = genAI.getGenerativeModel({ model: "models/gemini-pro" });
 
 bot.command("start", (ctx) => ctx.reply("Bienvenue 👋 Je suis ton bot Gemini !"));
 
@@ -20,7 +22,7 @@ bot.on("message:text", async (ctx) => {
     const text = result.response.text();
     await ctx.reply(text);
   } catch (err) {
-    console.error(err);
+    console.error("❌ Erreur Gemini :", err);
     await ctx.reply("❌ Oups, une erreur s'est produite.");
   }
 });
